@@ -1,0 +1,163 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+
+  /* ── Palette rose claire & blanc ── */
+  --background:        #FFFFFF;
+  --foreground:        #2D1B1B;
+
+  --card:              #FFFFFF;
+  --card-foreground:   #2D1B1B;
+
+  --popover:           #FFFFFF;
+  --popover-foreground:#2D1B1B;
+
+  /* Rose vif comme couleur principale */
+  --primary:           #F472A0;
+  --primary-foreground:#FFFFFF;
+
+  /* Rose très clair pour les surfaces secondaires */
+  --secondary:         #FCE4EF;
+  --secondary-foreground:#2D1B1B;
+
+  /* Fond doux rose pâle */
+  --muted:             #FDF0F5;
+  --muted-foreground:  #7D5A6A;
+
+  /* Pêche/saumon doux */
+  --accent:            #FFD6E7;
+  --accent-foreground: #2D1B1B;
+
+  --destructive:       #E53E6A;
+  --destructive-foreground: #FFFFFF;
+
+  --border:            rgba(244, 114, 160, 0.18);
+  --input:             transparent;
+  --input-background:  #FDF0F5;
+  --switch-background: #F472A0;
+
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+
+  --ring: #F472A0;
+
+  --chart-1: #F472A0;
+  --chart-2: #FFD6E7;
+  --chart-3: #FCE4EF;
+  --chart-4: #FDF0F5;
+  --chart-5: #E8B4C8;
+
+  --radius: 0.875rem;
+
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #2D1B1B;
+  --sidebar-primary: #F472A0;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #FDF0F5;
+  --sidebar-accent-foreground: #2D1B1B;
+  --sidebar-border: rgba(244, 114, 160, 0.18);
+  --sidebar-ring: #F472A0;
+
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 3rem;
+  --text-4xl: 3.75rem;
+}
+
+.dark {
+  --background:        #1A0A10;
+  --foreground:        #FAE8EF;
+  --card:              #26111A;
+  --card-foreground:   #FAE8EF;
+  --popover:           #26111A;
+  --popover-foreground:#FAE8EF;
+  --primary:           #F472A0;
+  --primary-foreground:#FFFFFF;
+  --secondary:         #3D1F2E;
+  --secondary-foreground:#FAE8EF;
+  --muted:             #2E1520;
+  --muted-foreground:  #B888A0;
+  --accent:            #3D1F2E;
+  --accent-foreground: #FAE8EF;
+  --destructive:       #E53E6A;
+  --destructive-foreground:#FFFFFF;
+  --border:            rgba(244, 114, 160, 0.2);
+  --input:             #2E1520;
+  --input-background:  #2E1520;
+  --ring:              #F472A0;
+}
+
+@theme inline {
+  --color-background:         var(--background);
+  --color-foreground:         var(--foreground);
+  --color-card:               var(--card);
+  --color-card-foreground:    var(--card-foreground);
+  --color-popover:            var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary:            var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary:          var(--secondary);
+  --color-secondary-foreground:var(--secondary-foreground);
+  --color-muted:              var(--muted);
+  --color-muted-foreground:   var(--muted-foreground);
+  --color-accent:             var(--accent);
+  --color-accent-foreground:  var(--accent-foreground);
+  --color-destructive:        var(--destructive);
+  --color-destructive-foreground:var(--destructive-foreground);
+  --color-border:             var(--border);
+  --color-input:              var(--input);
+  --color-input-background:   var(--input-background);
+  --color-switch-background:  var(--switch-background);
+  --color-ring:               var(--ring);
+  --color-chart-1:            var(--chart-1);
+  --color-chart-2:            var(--chart-2);
+  --color-chart-3:            var(--chart-3);
+  --color-chart-4:            var(--chart-4);
+  --color-chart-5:            var(--chart-5);
+  --radius-sm:  calc(var(--radius) - 4px);
+  --radius-md:  calc(var(--radius) - 2px);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) + 4px);
+  --color-sidebar:            var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary:    var(--sidebar-primary);
+  --color-sidebar-primary-foreground:var(--sidebar-primary-foreground);
+  --color-sidebar-accent:     var(--sidebar-accent);
+  --color-sidebar-accent-foreground:var(--sidebar-accent-foreground);
+  --color-sidebar-border:     var(--sidebar-border);
+  --color-sidebar-ring:       var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    font-size: var(--font-size);
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: var(--text-2xl); font-weight: 700; line-height: 1.2; }
+  h2 { font-size: var(--text-xl);  font-weight: 600; line-height: 1.3; }
+  h3 { font-size: var(--text-lg);  font-weight: 600; line-height: 1.4; }
+  h4 { font-size: var(--text-base);font-weight: 600; line-height: 1.5; }
+  label  { font-size: var(--text-sm);  font-weight: 500; line-height: 1.5; }
+  button { font-size: var(--text-base);font-weight: 500; line-height: 1.5; }
+  input  { font-size: var(--text-base);font-weight: 400; line-height: 1.5; }
+
+  /* Scrollbar subtile */
+  ::-webkit-scrollbar       { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--muted); }
+  ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+  /* Touch targets minimum 44px */
+  button, a, [role="button"] { min-height: 44px; }
+  /* Exception pour les très petits boutons iconiques */
+  .btn-icon-sm { min-height: 32px !important; }
+}
